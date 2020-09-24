@@ -23,11 +23,11 @@ public class RPService {
         public void run() {
             try {
                 String hostName = InetAddress.getLocalHost().getHostName();
-                for(int i=1; ; i++) {
+                for (int i = 1; ; i++) {
                     System.out.println("Scanning for processes for " + username + "@" + hostName + "...");
                     List<String> runningProcesses = getRunningProcesses();
                     System.out.println("Process count: " + runningProcesses.size());
-                    if(!runningProcesses.equals(lastState)) {
+                    if (!runningProcesses.equals(lastState)) {
                         System.out.println("New processes detected.");
                         System.out.println(runningProcesses.get(4));
                         // Business logic that sends process list to API
@@ -37,18 +37,18 @@ public class RPService {
                         lastState = runningProcesses;
                     }
                     Thread.sleep(30000);
-                    if(!loop_status) {
+                    if (!loop_status) {
                         break;
                     }
                 }
-            } catch(Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     });
 
     public void run() {
-        myThread.run();
+      myThread.start();
     }
 
     private List<String> getRunningProcesses() throws Exception {

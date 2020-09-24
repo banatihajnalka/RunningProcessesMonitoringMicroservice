@@ -18,13 +18,6 @@ public class Report {
     this.runningProcesses = runningProcesses;
   }
 
-  //  public Report(String username, List<RunningAppInfo> runningProcesses) {
-//    this.username = username;
-//    this.timestamp = new Timestamp(System.currentTimeMillis());
-//    this.runningProcesses = runningProcesses;
-//  }
-
-
   @JsonProperty
   public String getUsername() {
     return username;
@@ -52,12 +45,4 @@ public class Report {
     this.runningProcesses = runningProcesses;
   }
 
-//  @JsonProperty
-//  public List<RunningAppInfo> getRunningProcesses() {
-//    return runningProcesses;
-//  }
-//
-//  public void setRunningProcesses(List<RunningAppInfo> runningProcesses) {
-//    this.runningProcesses = runningProcesses;
-//  }
 }
